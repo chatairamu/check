@@ -1,0 +1,6 @@
+language-tool-python
+spacy
+pyspellchecker
+transformers
+torch
+textstat
