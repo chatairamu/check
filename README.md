@@ -68,3 +68,36 @@ Follow these steps to set up and run the application on your server.
 ### Accessing the Application
 
 Once the server is running, open your web browser and navigate to your server's IP address and the port you configured (e.g., `http://your-server-ip:8000`).
+
+### Deploying with DirectAdmin
+
+If your hosting provider uses the DirectAdmin control panel, you can follow these steps to deploy the application. These instructions assume DirectAdmin is using Phusion Passenger to serve Python applications.
+
+1.  **Upload Your Files:**
+    - Log in to your DirectAdmin account.
+    - Use the **File Manager** to navigate to the directory where you want to store your application (e.g., `domains/yourdomain.com/private_html/grammar-checker`).
+    - Upload all the application files and directories (`app.py`, `requirements.txt`, `static/`, `templates/`) to this location.
+
+2.  **Set up the Python Application:**
+    - Go back to the main DirectAdmin dashboard.
+    - Under the **Extra Features** section, click on **Setup Python App**.
+    - Click the **CREATE APP** button.
+    - Configure the application:
+        - **Python version:** Choose a recent version, like 3.8 or higher.
+        - **Application Root:** Set this to the directory where you uploaded your files (e.g., `/home/youruser/domains/yourdomain.com/private_html/grammar-checker`).
+        - **Application startup file:** Enter `app.py`. This is the main file for the Flask application.
+        - **Application Entry Point:** Enter `app`. This is the name of the Flask object created in `app.py` (`app = Flask(__name__)`).
+    - Click **CREATE**.
+
+3.  **Install Dependencies:**
+    - Once the application is created, the page will reload and show you details about your new app.
+    - A command to install dependencies will be displayed. It will look like `pip install -r requirements.txt`. Click the **Run** button next to this command.
+    - This will install Flask and `language-tool-python` inside the virtual environment created by DirectAdmin.
+
+4.  **Restart the Application:**
+    - At the top of the "Python App" page, click the **RESTART** button to apply your changes.
+
+5.  **Access Your Application:**
+    - Your application should now be live at your domain.
+
+**Note:** The exact names and locations of buttons might vary slightly depending on your hosting provider's DirectAdmin theme and version.
