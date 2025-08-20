@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Checker Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grammar Checker Pro</h1>
+            <p class="subtitle">Advanced grammar, punctuation, and style checking with AI-powered suggestions</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <h2>Check Your Text</h2>
+                <textarea class="text-input" placeholder="Paste your text here (up to 150,000 characters)...">Hello there! I is a test text to show how our grammar checker works. Hopefully it will find all the error's and help improve you writing. Lets see what it can detected.</textarea>
+
+                <div class="actions">
+                    <button class="btn-primary" id="check-btn">Check Grammar</button>
+                    <button class="btn-secondary" id="clear-btn">Clear Text</button>
+                    <button class="btn-secondary" id="example-btn">Example Text</button>
+                </div>
+
+                <div class="stats">
+                    <span id="char-count">Characters: 0</span>
+                    <span id="word-count">Words: 0</span>
+                    <span id="issue-count">Issues found: 0</span>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <h2>Grammar Check Results</h2>
+                <div class="issues-container" id="issues-container">
+                    <!-- Issues will be dynamically inserted here -->
+                </div>
+
+                <div class="corrected-text">
+                    <h3>Corrected Text</h3>
+                    <div class="corrected-content" id="corrected-text">
+                        <!-- Corrected text will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-list">
+            <div class="feature-card">
+                <h3>Grammar & Punctuation</h3>
+                <ul>
+                    <li>Agreement Errors</li>
+                    <li>Wrong Use of Tenses</li>
+                    <li>Incorrect Word Order</li>
+                    <li>Basic and Advanced Commas</li>
+                    <li>Wrong Punctuation</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Style Improvements</h3>
+                <ul>
+                    <li>Wordiness & Repetition</li>
+                    <li>Overused Words & Phrases</li>
+                    <li>Informal Style Detection</li>
+                    <li>Unofficial Spellings</li>
+                    <li>Standard Language Checks</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>Advanced Features</h3>
+                <ul>
+                    <li>AI-powered paraphrasing</li>
+                    <li>Personal Dictionary</li>
+                    <li>Text Statistics</li>
+                    <li>Personal Style Guide</li>
+                    <li>Picky Mode</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Grammar Checker Pro &copy; 2023 | All rights reserved</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
